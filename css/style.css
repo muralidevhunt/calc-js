@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500&display=swap');
+*,*::before, *::after
+{
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    font-weight: normal;
+}
+body
+{
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right top, #00ffff, #ee8e62);
+}
+
+/* .github
+{
+    position: absolute;
+    width: 3em;
+    height: 3em;
+    clip-path: polygon(0 0, 100% 100%, 100% 0);
+    top: 0;
+    right: 0;
+    background: rgba(53, 182, 133, 0.678);
+    overflow: hidden;
+}
+.github > img 
+{
+    transform: rotate(45deg);
+} */
+.calculator-grid
+{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4,100px);
+    grid-template-rows: minmax(120px, auto) repeat(5,100px);
+
+}
+.calculator-grid > button
+{
+    cursor: pointer;
+    font-size: 2rem;
+    /* border: 1px solid white; */
+    outline: none;
+    /* background-color: rgba(225, 225, 225, .75); */
+    background: rgba( 9, 205, 238, 0.1 );
+    /* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ); */
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    /* border-radius: 10px; */
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    transition: .1s ease-in-out;
+}
+.calculator-grid > button:hover
+{
+    background-color: rgba(225, 225, 225, .90);
+}
+.calculator-grid > button:nth-child(17)
+{
+    border-radius: 0 0 0 10px;
+}
+.calculator-grid > button:nth-child(19)
+{
+    border-radius: 0 0 10px 0;
+}
+.span-two
+{
+    grid-column: span 2;
+}
+div
+{
+    user-select: none;
+}
+.output 
+{
+    grid-column: 1/-1;
+    /* background: rgba(0, 0, 0, .75); */
+    background: rgba( 9, 205, 238, 0.1 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px 10px 0 0;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 20px;
+    word-wrap: break-word;
+    word-break: break-all;
+} 
+.previous-operand
+{
+    color: rgba(0, 0, 0, 0.75);
+    font-size: 1.2rem;
+}
+.current-operand
+{
+    color: rgba(0, 0, 0, .95);
+    font-size: 2.2rem;
+}
